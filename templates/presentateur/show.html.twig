@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Presentateur{% endblock %}
+
+{% block body %}
+    <h1>Presentateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ presentateur.id }}</td>
+            </tr>
+            <tr>
+                <th>CodeP</th>
+                <td>{{ presentateur.CodeP }}</td>
+            </tr>
+            <tr>
+                <th>NomP</th>
+                <td>{{ presentateur.NomP }}</td>
+            </tr>
+            <tr>
+                <th>CodeR</th>
+                <td>{{ presentateur.CodeR }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_presentateur_index') }}">back to list</a>
+
+    <a href="{{ path('app_presentateur_edit', {'id': presentateur.id}) }}">edit</a>
+
+    {{ include('presentateur/_delete_form.html.twig') }}
+{% endblock %}
