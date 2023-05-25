@@ -3,6 +3,8 @@
 {% block title %}New Role{% endblock %}
 
 {% block body %}
+{% include 'navbar.html.twig' %}
+
     <h1>Create new Role</h1>
 
     {{ include('role/_form.html.twig') }}

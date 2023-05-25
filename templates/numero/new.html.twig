@@ -3,9 +3,17 @@
 {% block title %}New Numero{% endblock %}
 
 {% block body %}
-    <h1>Create new Numero</h1>
 
+
+    <h1>Create new Numero</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <button type="submit">Create</button>
+    {{ form_end(form) }}
     {{ include('numero/_form.html.twig') }}
+
+    
 
     <a href="{{ path('app_numero_index') }}">back to list</a>
 {% endblock %}

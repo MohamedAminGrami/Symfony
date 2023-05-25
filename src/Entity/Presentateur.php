@@ -24,11 +24,12 @@ class Presentateur
     #[ORM\Column]
     private ?int $CodeR = null;
 
-    #[ORM\ManyToOne(inversedBy: 'presentateurs')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\ManyToOne(targetEntity: Role::class, inversedBy: 'presentateurs')]
+    #[ORM\JoinColumn(name: 'id', referencedColumnName: 'id', nullable: false)]
     private ?Role $role = null;
 
-    #[ORM\ManyToMany(targetEntity: Numero::class)]
+    #[ORM\ManyToOne(targetEntity: Numero::class, inversedBy: 'presentateurs')]
+    #[ORM\JoinColumn(name: 'id', referencedColumnName: 'id', nullable: false)]
     private Collection $numero;
 
     public function __construct()
@@ -112,4 +113,11 @@ class Presentateur
 
         return $this;
     }
+
+
+    public function __toString()
+    {
+        return $this->CodeN;
+    }
+
 }

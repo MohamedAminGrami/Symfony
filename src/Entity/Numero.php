@@ -24,6 +24,9 @@ class Numero
 
     #[ORM\Column]
     private ?int $CodeP = null;
+    
+    #[ORM\OneToMany(mappedBy: 'Presentateur', targetEntity: Presentateur::class)]
+    private Collection $presentateurs;
 
     public function getId(): ?int
     {

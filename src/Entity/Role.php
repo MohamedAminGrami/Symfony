@@ -24,7 +24,7 @@ class Role
     #[ORM\Column(nullable: true)]
     private ?int $Prix = null;
 
-    #[ORM\OneToMany(mappedBy: 'role', targetEntity: Presentateur::class)]
+    #[ORM\OneToMany(mappedBy: 'Presentateur', targetEntity: Presentateur::class)]
     private Collection $presentateurs;
 
     public function __construct()

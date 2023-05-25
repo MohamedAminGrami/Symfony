@@ -3,6 +3,8 @@
 {% block title %}Edit Role{% endblock %}
 
 {% block body %}
+{% include 'navbar.html.twig' %}
+
     <h1>Edit Role</h1>
 
     {{ include('role/_form.html.twig', {'button_label': 'Update'}) }}
